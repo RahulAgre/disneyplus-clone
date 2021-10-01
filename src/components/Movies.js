@@ -1,17 +1,24 @@
 import React from "react";
 import styled from "styled-components";
+import { selectMovies } from "../features/movie/movieSlice";
+import { useSelector } from "react-redux";
 
 function Movies() {
+  const movies = useSelector(selectMovies);
+
+  console.log("This is movies", movies);
+
   return (
     <Container>
       <h4>Recommended for You</h4>
       <Content>
-        <Wrap>
-          <img
-            src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/C28A458F3748A9550DA296E86458D6BE2CAA3D0483EDBB88013A1984F3D53CC7/scale?width=300&aspectRatio=1.78&format=jpeg"
-            alt=""
-          />
-        </Wrap>
+        {movies &&
+          movies.map((movie) => (
+            <Wrap>
+              <img src={movie.cardImg} alt="" />
+            </Wrap>
+          ))}
+
         <Wrap>
           <img
             src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/C28A458F3748A9550DA296E86458D6BE2CAA3D0483EDBB88013A1984F3D53CC7/scale?width=300&aspectRatio=1.78&format=jpeg"
@@ -71,6 +78,7 @@ const Content = styled.div`
 `;
 
 const Wrap = styled.div`
+  margin: 5px 5px;
   cursor: pointer;
   border-radius: 10px;
   overflow: hidden;
