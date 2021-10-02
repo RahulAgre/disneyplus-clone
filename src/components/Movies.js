@@ -1,12 +1,11 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 import { selectMovies } from "../features/movie/movieSlice";
 import { useSelector } from "react-redux";
 
 function Movies() {
   const movies = useSelector(selectMovies);
-
-  console.log("This is movies", movies);
 
   return (
     <Container>
@@ -14,14 +13,16 @@ function Movies() {
       <Content>
         {movies &&
           movies.map((movie) => (
-            <Wrap>
-              <img src={movie.cardImg} alt="" />
+            <Wrap key={movie.id}>
+              <Link to={`/detail/${movie.id}`}>
+                <img src={movie.cardImg} alt="" />
+              </Link>
             </Wrap>
           ))}
 
         <Wrap>
           <img
-            src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/C28A458F3748A9550DA296E86458D6BE2CAA3D0483EDBB88013A1984F3D53CC7/scale?width=300&aspectRatio=1.78&format=jpeg"
+            src="https://media.comicbook.com/2021/07/marvel-what-if-tv-series-poster-official-disney-plus-1274908.jpeg?auto=webp&width=1280&height=1897&crop=1280:1897,smart"
             alt=""
           />
         </Wrap>
@@ -74,11 +75,11 @@ const Content = styled.div`
   overflow: hidden;
   display: grid;
   grid-gap: 25px;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
 `;
 
 const Wrap = styled.div`
-  margin: 5px 5px;
+  margin: 8px 5px 5px 5px;
   cursor: pointer;
   border-radius: 10px;
   overflow: hidden;
