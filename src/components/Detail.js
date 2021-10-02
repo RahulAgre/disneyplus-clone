@@ -1,18 +1,38 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
+import { useParams } from "react-router-dom";
+import db from "../firebase";
 
 function Detail() {
+  const { id } = useParams();
+  const [movie, setMovie] = useState([]);
+
+  useEffect(() => {
+    //grab movie from DB
+    db.collection("movies")
+      .doc(id)
+      .get()
+      .then((doc) => {
+        if (doc.exists) {
+          //save movie data
+          setMovie(doc.data());
+        } else {
+          // redirect to homepage
+          console.log("No such document!");
+        }
+      });
+  }, [id]);
+
+  console.log("Movie is", movie);
+
   return (
     <Container>
       <Background>
-        <img
-          src="https://bingeddata.s3.amazonaws.com/uploads/2020/11/bao-1.jpg"
-          alt=""
-        />
+        <img src={movie.backgroundImg} alt="" />
       </Background>
 
       <ImageTitle>
-        <img src="https://imgur.com/2pKwvc1.png" alt="" />
+        <img src={movie.titleImg} alt="" />
       </ImageTitle>
 
       <Controls>
@@ -35,13 +55,9 @@ function Detail() {
         </GroupWatchButton>
       </Controls>
 
-      <SubTitle>2018 • 7m • Family, Fantasy, Kids, Animation</SubTitle>
+      <SubTitle>{movie.subTitle}</SubTitle>
 
-      <Description>
-        A Chinese mom who's sad when her grown son leaves home gets another
-        chance at motherhood when one of her dumplings springs to life. But she
-        finds that nothing stays cute and small forever.
-      </Description>
+      <Description>{movie.description}</Description>
     </Container>
   );
 }
