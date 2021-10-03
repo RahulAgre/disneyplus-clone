@@ -75,11 +75,15 @@ const Content = styled.div`
   overflow: hidden;
   display: grid;
   grid-gap: 25px;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
 `;
 
 const Wrap = styled.div`
-  margin: 8px 5px 5px 5px;
+  margin: 15px 10px 5px 10px;
   cursor: pointer;
   border-radius: 10px;
   overflow: hidden;
@@ -95,7 +99,7 @@ const Wrap = styled.div`
   }
 
   &:hover {
-    transform: scale(1.05);
+    transform: scale(1.08);
     box-shadow: rgb(0 0 0 / 80%) 0px 40px 58px -16px,
       rgb(0 0 0 / 72%) 0px 30px 22px -10px;
     border-color: rgba(249, 249, 249, 0.8);
