@@ -21,7 +21,7 @@ function Detail() {
           console.log("No such document!");
         }
       });
-  }, []);
+  }, [id]);
 
   console.log("Movie is", movie);
 
