@@ -5,7 +5,7 @@ import db from "../firebase";
 
 function Detail() {
   const { id } = useParams();
-  const [movie, setMovie] = useState([]);
+  const [movie, setMovie] = useState();
 
   useEffect(() => {
     //grab movie from DB
@@ -21,43 +21,47 @@ function Detail() {
           console.log("No such document!");
         }
       });
-  }, [id]);
+  }, []);
 
   console.log("Movie is", movie);
 
   return (
     <Container>
-      <Background>
-        <img src={movie.backgroundImg} alt="" />
-      </Background>
+      {movie && (
+        <>
+          <Background>
+            <img src={movie.backgroundImg} alt="" />
+          </Background>
 
-      <ImageTitle>
-        <img src={movie.titleImg} alt="" />
-      </ImageTitle>
+          <ImageTitle>
+            <img src={movie.titleImg} alt="" />
+          </ImageTitle>
 
-      <Controls>
-        <PlayButton>
-          <img src="/images/play-icon-black.png" alt="" />
-          <span>PLAY</span>
-        </PlayButton>
+          <Controls>
+            <PlayButton>
+              <img src="/images/play-icon-black.png" alt="" />
+              <span>PLAY</span>
+            </PlayButton>
 
-        <TrailerButton>
-          <img src="/images/play-icon-white.png" alt="" />
-          <span>Trailer</span>
-        </TrailerButton>
+            <TrailerButton>
+              <img src="/images/play-icon-white.png" alt="" />
+              <span>Trailer</span>
+            </TrailerButton>
 
-        <AddButton>
-          <span>+</span>
-        </AddButton>
+            <AddButton>
+              <span>+</span>
+            </AddButton>
 
-        <GroupWatchButton>
-          <img src="/images/group-icon.png" alt="" />
-        </GroupWatchButton>
-      </Controls>
+            <GroupWatchButton>
+              <img src="/images/group-icon.png" alt="" />
+            </GroupWatchButton>
+          </Controls>
 
-      <SubTitle>{movie.subTitle}</SubTitle>
+          <SubTitle>{movie.subTitle}</SubTitle>
 
-      <Description>{movie.description}</Description>
+          <Description>{movie.description}</Description>
+        </>
+      )}
     </Container>
   );
 }
