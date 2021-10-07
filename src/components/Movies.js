@@ -19,49 +19,6 @@ function Movies() {
               </Link>
             </Wrap>
           ))}
-
-        <Wrap>
-          <img
-            src="https://media.comicbook.com/2021/07/marvel-what-if-tv-series-poster-official-disney-plus-1274908.jpeg?auto=webp&width=1280&height=1897&crop=1280:1897,smart"
-            alt=""
-          />
-        </Wrap>
-        <Wrap>
-          <img
-            src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/C28A458F3748A9550DA296E86458D6BE2CAA3D0483EDBB88013A1984F3D53CC7/scale?width=300&aspectRatio=1.78&format=jpeg"
-            alt=""
-          />
-        </Wrap>
-        <Wrap>
-          <img
-            src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/C28A458F3748A9550DA296E86458D6BE2CAA3D0483EDBB88013A1984F3D53CC7/scale?width=300&aspectRatio=1.78&format=jpeg"
-            alt=""
-          />
-        </Wrap>
-        <Wrap>
-          <img
-            src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/C28A458F3748A9550DA296E86458D6BE2CAA3D0483EDBB88013A1984F3D53CC7/scale?width=300&aspectRatio=1.78&format=jpeg"
-            alt=""
-          />
-        </Wrap>
-        <Wrap>
-          <img
-            src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/C28A458F3748A9550DA296E86458D6BE2CAA3D0483EDBB88013A1984F3D53CC7/scale?width=300&aspectRatio=1.78&format=jpeg"
-            alt=""
-          />
-        </Wrap>
-        <Wrap>
-          <img
-            src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/C28A458F3748A9550DA296E86458D6BE2CAA3D0483EDBB88013A1984F3D53CC7/scale?width=300&aspectRatio=1.78&format=jpeg"
-            alt=""
-          />
-        </Wrap>
-        <Wrap>
-          <img
-            src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/C28A458F3748A9550DA296E86458D6BE2CAA3D0483EDBB88013A1984F3D53CC7/scale?width=300&aspectRatio=1.78&format=jpeg"
-            alt=""
-          />
-        </Wrap>
       </Content>
     </Container>
   );
