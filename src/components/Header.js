@@ -93,7 +93,7 @@ function Header() {
               <span>SERIES</span>
             </a>
           </NavMenu>
-          <UserImg onClick={signOut} src={signIn.photoURL} />
+          <UserImg onClick={signOut} src={userPhoto} />
         </>
       )}
     </Nav>
