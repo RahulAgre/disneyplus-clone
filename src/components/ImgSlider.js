@@ -22,6 +22,12 @@ function ImgSlider() {
       <Wrap>
         <img src="/images/slider-badag.jpg" alt="" />
       </Wrap>
+      <Wrap>
+        <img src="/images/slider-scale.jpg" alt="" />
+      </Wrap>
+      <Wrap>
+        <img src="/images/slider-scales.jpg" alt="" />
+      </Wrap>
     </Carousel>
   );
 }
@@ -63,7 +69,7 @@ const Wrap = styled.div`
     transition-duration: 300ms;
 
     &:hover {
-      border: 4px solid rgba(249, 249, 249, 0.8);
+      border: 1px solid rgba(249, 249, 249, 0.8);
     }
   }
 `;
